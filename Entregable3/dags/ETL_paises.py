@@ -115,7 +115,7 @@ def extraer_data(exec_date):
 def transformar_data(exec_date):       
     print(f"Transformando la data para la fecha: {exec_date}") 
     date = datetime.strptime(exec_date, '%Y-%m-%d %H')
-    dt = pd.read_csv(dag_path+'/raw_data/'+"data_"+str(date.year)+'-'+str(date.month)+'-'+str(date.day)+'-'+str(date.hour)+".csv")
+    df = pd.read_csv(dag_path+'/raw_data/'+"data_"+str(date.year)+'-'+str(date.month)+'-'+str(date.day)+'-'+str(date.hour)+".csv")
     # Fiiltrar el topico de interes: mining_stats
    #Explorando el dataframe
     df.head()
