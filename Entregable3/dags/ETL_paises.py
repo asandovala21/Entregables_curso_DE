@@ -195,6 +195,7 @@ def cargar_data(exec_date):
     primary_key=[f"primary key({name})"]
     column_defs.append(primary_key[0])
     # Combine column definitions into the CREATE TABLE statement
+    table_name = 'base_paises_resumen'
     table_schema = f"""
         CREATE TABLE IF NOT EXISTS {table_name} (
             {', '.join(column_defs)}
@@ -203,7 +204,6 @@ def cargar_data(exec_date):
     # Crear la tabla
     from psycopg2.extras import execute_values
     cur = conn.cursor()
-    table_name = 'base_paises_resumen'
     cur.execute(table_schema)
     # Generar los valores a insertar
     values = [tuple(x) for x in dataframe.to_numpy()]
