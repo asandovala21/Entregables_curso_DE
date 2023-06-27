@@ -42,7 +42,7 @@ BC_dag = DAG(
     dag_id='ETL_paises',
     default_args=default_args,
     description='Agrega data de países de forma mensual',
-    schedule_interval="@monthly",
+    schedule_interval="@daily",
     catchup=False
 )
 
