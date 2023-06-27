@@ -55,7 +55,8 @@ def extraer_data(exec_date):
         date = datetime.strptime(exec_date, '%Y-%m-%d %H')
         #API de datos de países
         url = "https://restcountries.com/v3.1/all"
-        if response := requests.get(url):
+        response = requests.get(url)
+        if response:
             print('Success!')
             
             data=response.json()
